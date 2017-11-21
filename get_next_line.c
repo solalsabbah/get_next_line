@@ -6,22 +6,17 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 17:26:26 by ssabbah           #+#    #+#             */
-<<<<<<< Updated upstream
-/*   Updated: 2017/11/07 12:17:23 by ssabbah          ###   ########.fr       */
-=======
-/*   Updated: 2017/11/07 10:22:44 by ssabbah          ###   ########.fr       */
->>>>>>> Stashed changes
+/*   Updated: 2017/11/21 13:03:45 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include "libft/libft.h"
+#include "get_next_line.h"
 
-#define BUFF_SIZE 10
-
-<<<<<<< Updated upstream
 int		ft_remaintoline(char **rem, char **line)
 {
 	int	len;
@@ -63,22 +58,8 @@ int		ft_readfunction(int fd, char **rem, char **line, char *buf)
 			free(tmp);
 			break ;
 		}
-=======
-int		get_next_line(const int fd, char **line)
-{
-	int				ret;
-	static char		*rem;
-	char			*str;
-
-	line[0] = ft_strnew(BUF_SIZE);
-	str = ft_strnew(BUF_SIZE);
-	while ((ret = read(fd, line, BUF_SIZE)) != 0)
-	{
-		printf("%s\n", line[0]);
-		line[ret] = 0;
->>>>>>> Stashed changes
 	}
-	return (ret);
+	return (0);
 }
 
 int		get_next_line(const int fd, char **line)
@@ -92,9 +73,7 @@ int		get_next_line(const int fd, char **line)
 	line[0] = ft_strnew(BUFF_SIZE);
 	if (rem != NULL)
 		if ((ft_remaintoline(&rem, &line[0])) != 0)
-		{
 			return (1);
-		}
 	buf = ft_strnew(BUFF_SIZE);
 	if ((ret = ft_readfunction(fd, &rem, &line[0], buf)) == -1)
 		return (-1);
