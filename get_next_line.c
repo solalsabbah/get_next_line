@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -37,12 +36,12 @@ int		ft_readfunction(int fd, char **rem, char **line, char *buf)
 {
 	int		ret;
 	int		len;
-	char	*tmp;
+	char		*tmp;
 
 	while ((ret = read(fd, buf, BUFF_SIZE)) != 0)
 	{
 		if (ret == -1)
-			return (-1);
+			return (ret);
 		buf[ret] = 0;
 		tmp = ft_strdup(line[0]);
 		free(line[0]);
@@ -59,7 +58,7 @@ int		ft_readfunction(int fd, char **rem, char **line, char *buf)
 			break ;
 		}
 	}
-	return (0);
+	return (ret);
 }
 
 int		get_next_line(const int fd, char **line)
