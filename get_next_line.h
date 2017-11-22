@@ -6,13 +6,13 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 17:26:16 by ssabbah           #+#    #+#             */
-/*   Updated: 2017/11/21 12:43:44 by ssabbah          ###   ########.fr       */
+/*   Updated: 2017/11/22 11:27:18 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 10
+# define BUFF_SIZE 100
 
 int		get_next_line(const int fd, char **line);
 

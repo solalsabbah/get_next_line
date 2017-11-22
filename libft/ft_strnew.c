@@ -6,7 +6,7 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 14:29:33 by ssabbah           #+#    #+#             */
-/*   Updated: 2017/11/02 19:38:59 by ssabbah          ###   ########.fr       */
+/*   Updated: 2017/11/22 19:05:38 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ char	*ft_strnew(size_t size)
 	size_t	i;
 
 	i = 0;
-	str = (void *)malloc(sizeof(*str) * (size + 1));
-	if (str == NULL)
+	if ((str = (char *)malloc(sizeof(char) * size + 1)) == NULL)
 		return (0);
 	while (i < size)
 	{
